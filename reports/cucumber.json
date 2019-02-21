@@ -1,0 +1,1671 @@
+[
+    {
+        "keyword": "Feature",
+        "name": "Validate API endpoints for delete books, authors",
+        "tags": [],
+        "elements": [
+            {
+                "type": "background",
+                "keyword": "Background",
+                "name": "",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "line": 3,
+                        "result": {
+                            "status": "skipped",
+                            "duration": 0
+                        }
+                    }
+                ],
+                "line": 2,
+                "uri": "features/feature-delete.feature",
+                "description": "",
+                "id": 1
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Delete a author",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:7",
+                            "arguments": [
+                                {
+                                    "value": "http://192.168.99.100:8080/api/",
+                                    "name": "basic_app_url"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 3
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"DELETE\" api endpoint as \"authors/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "DELETE",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "authors/",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 5
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set \"Author\" id is 1 and operation is \"DELETE\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:15",
+                            "arguments": [
+                                {
+                                    "value": "Author",
+                                    "name": "item"
+                                },
+                                {
+                                    "value": 1,
+                                    "name": "expected_itemid",
+                                    "original": "1"
+                                },
+                                {
+                                    "value": "DELETE",
+                                    "name": "opt"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 6
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Set HEADER param request content type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:24",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 7
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set HEADER param response accept type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:28",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "accept_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 8
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Raise \"DELETE\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "DELETE",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 23002862
+                        },
+                        "line": 9
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1500368
+                        },
+                        "line": 10
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "failed",
+                            "duration": 1000165,
+                            "error_message": "['Assertion Failed: ***ERROR: Following unexpected error response code received: 404', 'Captured stdout:', {'error': True, 'message': 'Page not found'}]"
+                        },
+                        "line": 11
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "line": 12,
+                        "result": {
+                            "status": "skipped",
+                            "duration": 0
+                        }
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "line": 13,
+                        "result": {
+                            "status": "skipped",
+                            "duration": 0
+                        }
+                    }
+                ],
+                "line": 4,
+                "uri": "features/feature-delete.feature",
+                "description": "",
+                "id": 2
+            }
+        ],
+        "line": 1,
+        "uri": "features/feature-delete.feature",
+        "description": "",
+        "id": 0
+    },
+    {
+        "keyword": "Feature",
+        "name": "Validate API endpoints for get book and author details",
+        "tags": [],
+        "elements": [
+            {
+                "type": "background",
+                "keyword": "Background",
+                "name": "",
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "line": 4,
+                        "result": {
+                            "status": "skipped",
+                            "duration": 0
+                        }
+                    }
+                ],
+                "line": 3,
+                "uri": "features/feature-get.feature",
+                "description": "",
+                "id": 2
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "GET authorList",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:7",
+                            "arguments": [
+                                {
+                                    "value": "http://192.168.99.100:8080/api/",
+                                    "name": "basic_app_url"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 4
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"GET\" api endpoint as \"authors\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "authors",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 8
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Set HEADER param request content type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:24",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 9
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set HEADER param response accept type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:28",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "accept_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 10
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Raise \"GET\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 41505336
+                        },
+                        "line": 11
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1500129
+                        },
+                        "line": 12
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 13
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 14
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1500129
+                        },
+                        "line": 15
+                    }
+                ],
+                "line": 7,
+                "uri": "features/feature-get.feature",
+                "description": "",
+                "id": 3
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "GET bookList",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:7",
+                            "arguments": [
+                                {
+                                    "value": "http://192.168.99.100:8080/api/",
+                                    "name": "basic_app_url"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 4
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"GET\" api endpoint as \"books\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "books",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 19
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Set HEADER param request content type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:24",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 20
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set HEADER param response accept type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:28",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "accept_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 21
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Raise \"GET\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 47506093
+                        },
+                        "line": 22
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 23
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 24
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 25
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 26
+                    }
+                ],
+                "line": 18,
+                "uri": "features/feature-get.feature",
+                "description": "",
+                "id": 4
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "GET singleAuthorDetails",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:7",
+                            "arguments": [
+                                {
+                                    "value": "http://192.168.99.100:8080/api/",
+                                    "name": "basic_app_url"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000404
+                        },
+                        "line": 4
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"GET\" api endpoint as \"authors/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "authors/",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 30
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set \"Author\" id is 1 and operation is \"GET\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:15",
+                            "arguments": [
+                                {
+                                    "value": "Author",
+                                    "name": "item"
+                                },
+                                {
+                                    "value": 1,
+                                    "name": "expected_itemid",
+                                    "original": "1"
+                                },
+                                {
+                                    "value": "GET",
+                                    "name": "opt"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 31
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Raise \"GET\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 23502826
+                        },
+                        "line": 32
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1500129
+                        },
+                        "line": 33
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 34
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000404
+                        },
+                        "line": 35
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 36
+                    }
+                ],
+                "line": 29,
+                "uri": "features/feature-get.feature",
+                "description": "",
+                "id": 5
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "GET singleBookDetails",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set basic web application url is \"http://192.168.99.100:8080/api/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:7",
+                            "arguments": [
+                                {
+                                    "value": "http://192.168.99.100:8080/api/",
+                                    "name": "basic_app_url"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 4
+                    },
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"GET\" api endpoint as \"books/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "books/",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 40
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set \"book\" id is 1 and operation is \"GET\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:15",
+                            "arguments": [
+                                {
+                                    "value": "book",
+                                    "name": "item"
+                                },
+                                {
+                                    "value": 1,
+                                    "name": "expected_itemid",
+                                    "original": "1"
+                                },
+                                {
+                                    "value": "GET",
+                                    "name": "opt"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 41
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Raise \"GET\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "GET",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 22002696
+                        },
+                        "line": 42
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 43
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 44
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 45
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 46
+                    }
+                ],
+                "line": 39,
+                "uri": "features/feature-get.feature",
+                "description": "",
+                "id": 6
+            }
+        ],
+        "line": 1,
+        "uri": "features/feature-get.feature",
+        "description": "",
+        "id": 1
+    },
+    {
+        "keyword": "Feature",
+        "name": "Validate API endpoints for add books, add authors",
+        "tags": [],
+        "elements": [
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Add Author",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"POST\" api endpoint as \"authors\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "POST",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "authors",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 3
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set basic \"Author\" details as \"<particular>\" and \"<value>\" below",
+                        "table": {
+                            "headings": [
+                                "particular",
+                                "value"
+                            ],
+                            "rows": [
+                                [
+                                    "name",
+                                    "Martin"
+                                ],
+                                [
+                                    "email",
+                                    "martin@telenorhealth.com"
+                                ],
+                                [
+                                    "mobile",
+                                    "01793456745"
+                                ],
+                                [
+                                    "address",
+                                    "test address for tester"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "steps/TestSteps.py:19",
+                            "arguments": [
+                                {
+                                    "value": "Author",
+                                    "name": "item_name"
+                                },
+                                {
+                                    "value": "<particular>",
+                                    "name": "particular"
+                                },
+                                {
+                                    "value": "<value>",
+                                    "name": "value"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 4,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "particular",
+                                    "value"
+                                ],
+                                "line": 5
+                            },
+                            {
+                                "cells": [
+                                    "name",
+                                    "Martin"
+                                ],
+                                "line": 6
+                            },
+                            {
+                                "cells": [
+                                    "email",
+                                    "martin@telenorhealth.com"
+                                ],
+                                "line": 7
+                            },
+                            {
+                                "cells": [
+                                    "mobile",
+                                    "01793456745"
+                                ],
+                                "line": 8
+                            },
+                            {
+                                "cells": [
+                                    "address",
+                                    "test address for tester"
+                                ],
+                                "line": 9
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Set HEADER param request content type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:24",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 10
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set HEADER param response accept type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:28",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "accept_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 11
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set BODY form param using basic \"Author\" details",
+                        "match": {
+                            "location": "steps/TestSteps.py:37",
+                            "arguments": [
+                                {
+                                    "value": "Author",
+                                    "name": "item_name"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 12
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Raise \"POST\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "POST",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 275034904
+                        },
+                        "line": 13
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1499891
+                        },
+                        "line": 14
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 15
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 16
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 17
+                    }
+                ],
+                "line": 2,
+                "uri": "features/feature-post.feature",
+                "description": "",
+                "id": 3
+            },
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Add book",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"POST\" api endpoint as \"books\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "POST",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "books",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 21
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set basic \"Book\" details as \"<particular>\" and \"<value>\" below",
+                        "table": {
+                            "headings": [
+                                "particular",
+                                "value"
+                            ],
+                            "rows": [
+                                [
+                                    "english_name",
+                                    "The bengal tiger history"
+                                ],
+                                [
+                                    "bangla_name",
+                                    "The bengal bag history"
+                                ],
+                                [
+                                    "english_dsc",
+                                    "nature of english"
+                                ],
+                                [
+                                    "bangla_dsc",
+                                    "nature of bangla"
+                                ],
+                                [
+                                    "authorid",
+                                    "1"
+                                ],
+                                [
+                                    "image_link",
+                                    "test.jpg"
+                                ]
+                            ]
+                        },
+                        "match": {
+                            "location": "steps/TestSteps.py:19",
+                            "arguments": [
+                                {
+                                    "value": "Book",
+                                    "name": "item_name"
+                                },
+                                {
+                                    "value": "<particular>",
+                                    "name": "particular"
+                                },
+                                {
+                                    "value": "<value>",
+                                    "name": "value"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 22,
+                        "rows": [
+                            {
+                                "cells": [
+                                    "particular",
+                                    "value"
+                                ],
+                                "line": 23
+                            },
+                            {
+                                "cells": [
+                                    "english_name",
+                                    "The bengal tiger history"
+                                ],
+                                "line": 24
+                            },
+                            {
+                                "cells": [
+                                    "bangla_name",
+                                    "The bengal bag history"
+                                ],
+                                "line": 25
+                            },
+                            {
+                                "cells": [
+                                    "english_dsc",
+                                    "nature of english"
+                                ],
+                                "line": 26
+                            },
+                            {
+                                "cells": [
+                                    "bangla_dsc",
+                                    "nature of bangla"
+                                ],
+                                "line": 27
+                            },
+                            {
+                                "cells": [
+                                    "authorid",
+                                    "1"
+                                ],
+                                "line": 28
+                            },
+                            {
+                                "cells": [
+                                    "image_link",
+                                    "test.jpg"
+                                ],
+                                "line": 29
+                            }
+                        ]
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Set HEADER param request content type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:24",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 30
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set HEADER param response accept type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:28",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "accept_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 31
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set BODY form param using basic \"Book\" details",
+                        "match": {
+                            "location": "steps/TestSteps.py:37",
+                            "arguments": [
+                                {
+                                    "value": "Book",
+                                    "name": "item_name"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 32
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Raise \"POST\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "POST",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 187523841
+                        },
+                        "line": 33
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 34
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 35
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500440
+                        },
+                        "line": 36
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 37
+                    }
+                ],
+                "line": 20,
+                "uri": "features/feature-post.feature",
+                "description": "",
+                "id": 4
+            }
+        ],
+        "line": 1,
+        "uri": "features/feature-post.feature",
+        "description": "",
+        "id": 2
+    },
+    {
+        "keyword": "Feature",
+        "name": "Validate API endpoints for update books, authors",
+        "tags": [],
+        "elements": [
+            {
+                "type": "scenario",
+                "keyword": "Scenario",
+                "name": "Update a Author details",
+                "tags": [],
+                "steps": [
+                    {
+                        "keyword": "Given",
+                        "name": "Set \"PUT\" api endpoint as \"authors/\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:11",
+                            "arguments": [
+                                {
+                                    "value": "PUT",
+                                    "name": "request_type"
+                                },
+                                {
+                                    "value": "authors/",
+                                    "name": "get_api_endpoint"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 3
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set \"Author\" id is 69 and operation is \"PUT\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:15",
+                            "arguments": [
+                                {
+                                    "value": "Author",
+                                    "name": "item"
+                                },
+                                {
+                                    "value": 69,
+                                    "name": "expected_itemid",
+                                    "original": "69"
+                                },
+                                {
+                                    "value": "PUT",
+                                    "name": "opt"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 4
+                    },
+                    {
+                        "keyword": "When",
+                        "name": "Set HEADER param request content type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:24",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 5
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Set HEADER param response accept type as \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:28",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "accept_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 6
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Modify Author name as \"Rai\", email as \"test6@gmail.com\" and mobile as \"12357464747\" and author id is 69",
+                        "match": {
+                            "location": "steps/TestSteps.py:41",
+                            "arguments": [
+                                {
+                                    "value": "Rai",
+                                    "name": "new_name"
+                                },
+                                {
+                                    "value": "test6@gmail.com",
+                                    "name": "new_email"
+                                },
+                                {
+                                    "value": "12357464747",
+                                    "name": "new_mobile"
+                                },
+                                {
+                                    "value": 69,
+                                    "name": "expected_auhor_id",
+                                    "original": "69"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 999927
+                        },
+                        "line": 7
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Raise \"PUT\" HTTP request",
+                        "match": {
+                            "location": "steps/TestSteps.py:32",
+                            "arguments": [
+                                {
+                                    "value": "PUT",
+                                    "name": "request_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 172021627
+                        },
+                        "line": 8
+                    },
+                    {
+                        "keyword": "Then",
+                        "name": "Valid HTTP response should be received",
+                        "match": {
+                            "location": "steps/TestSteps.py:46",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 1000165
+                        },
+                        "line": 9
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response http code should be 200",
+                        "match": {
+                            "location": "steps/TestSteps.py:52",
+                            "arguments": [
+                                {
+                                    "value": 200,
+                                    "name": "expected_response_code",
+                                    "original": "200"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500202
+                        },
+                        "line": 10
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response HEADER content type should be \"application/json\"",
+                        "match": {
+                            "location": "steps/TestSteps.py:57",
+                            "arguments": [
+                                {
+                                    "value": "application/json",
+                                    "name": "expected_response_content_type"
+                                }
+                            ]
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 500440
+                        },
+                        "line": 11
+                    },
+                    {
+                        "keyword": "And",
+                        "name": "Response BODY should not be null or empty",
+                        "match": {
+                            "location": "steps/TestSteps.py:62",
+                            "arguments": []
+                        },
+                        "result": {
+                            "status": "passed",
+                            "duration": 499963
+                        },
+                        "line": 12
+                    }
+                ],
+                "line": 2,
+                "uri": "features/feature-update.feature",
+                "description": "",
+                "id": 4
+            }
+        ],
+        "line": 1,
+        "uri": "features/feature-update.feature",
+        "description": "",
+        "id": 3
+    }
+]

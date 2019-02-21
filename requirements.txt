@@ -1,0 +1,3 @@
+pip install -U behave
+pip install -U behave2cucumber
+npm install cucumber-html-reporter --save-dev
