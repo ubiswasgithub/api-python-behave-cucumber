@@ -5,7 +5,11 @@ var options = {
         jsonFile: 'reports/cucumber.json',
         output: 'reports/cucumber_report.html',
         reportSuiteAsScenarios: true,
-        launchReport: false,
+        launchReport: true,
+        screenshotsDirectory: 'screenshots/',
+        storeScreenshots: true,
+        brandTitle:'api-python-cucumber-behave-test',
+        name:'Api-acceptance-test-report',
         metadata: {
             "App Version":"0.3.2",
             "Test Environment": "STAGING",
