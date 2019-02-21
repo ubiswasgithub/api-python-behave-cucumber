@@ -25,3 +25,6 @@ If all above dependencies are installed then run the below commands from project
 
 
 Or simplay click on the Runner.bat file to execute the above 3 commands.
+
+
+# courtesy: https://www.npmjs.com/package/cucumber-html-reporter
