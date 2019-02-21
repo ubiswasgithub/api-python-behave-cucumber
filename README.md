@@ -1,13 +1,14 @@
 # api-python-behave-cucumber
 
 Before running the project, make sure your PC should have installed below dependencies:
-Basic installations:
+
+#Basic installations:
 1. Install Python, if doesn't exists
 2. Install npm, if doesn't exists
 3. Install pip, if doesn't exists
 
 
-Project oriented installations:
+#Project oriented installations:
 1. Install request using the below command
 pip install -U requests
 2. Install json2html using the below command
