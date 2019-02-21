@@ -1,4 +1,6 @@
 Feature: Validate API endpoints for update books, authors
+Background:
+	Given Set basic web application url is "http://192.168.99.100:8080/api/"
 Scenario: Update a Author details
   Given Set "PUT" api endpoint as "authors/"
 	And Set "Author" id is 69 and operation is "PUT"
