@@ -1,4 +1,6 @@
 Feature: Validate API endpoints for add books, add authors
+Background:
+	Given Set basic web application url is "http://192.168.99.100:8080/api/"
 Scenario: Add Author
   Given Set "POST" api endpoint as "authors"
 	And Set basic "Author" details as "<particular>" and "<value>" below
